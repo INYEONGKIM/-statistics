@@ -1,0 +1,20 @@
+library(MASS)
+str(Nile)
+hist(Nile, breaks = 8)
+
+library(MASS)
+str(survey)
+tb <- table(survey$Smoke)
+lab <- c(names(tb))
+pct <- round(tb / sum(tb) * 100)
+lab <- paste(lab, pct)
+lab <- paste(lab, "%", sep="")
+pie(tb,init.angle = 90, label = lab, col = rainbow(length(tb)))
+
+library(MASS)
+str(cats)
+s <- summary(cats)
+
+bdata <- c(47, 97)
+names(bdata) <- c("Female","Male")
+barplot(bdata, main = "Number of cats by sex", xlab = "sex", ylab = "number")
